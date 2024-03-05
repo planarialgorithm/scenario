@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+html{
+  position: relative;
+  font-size: 70%;
+}
+
+body{
+  font-size: 1.3rem;
+  font-family:"Sawarabi Mincho","Sawarabi Gothic",'Marcellus','Meiryo', serif;
+  color: #555;
+  background-color: #ffffff;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+header, .contents, footer{
+  margin: 0 auto;
+  width: 50%;
+  background-color: #FFFFFF;
+  opacity:0.9;
+}
+
+h1 {
+    padding-left: 10px;
+    border-left: 5px solid #393e4f;
+    font-size: 2.5rem;
+}
+
+hr {
+	border-top: 1px dashed #aaa;
+}
+
+header {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0; 
+}
+
+.main {
+	margin-top: 100px;
+}
+
+
+
+/*******************************/
+
+/* Nav items */
+.menu {
+  list-style: none;
+  position: absolute;
+  width: 50%;
+  height: auto;
+  top: 0;
+  margin-top: 52px;
+  padding: 0 0 10px 0;
+  clear: both;
+  z-index: 100;/* 重なり順を一番上にする */
+  background: #FFF;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  transform: scale(1, 0);
+  transform-origin: top;
+}
+
+/* Hamburger menu button */
+.menu-btn:checked ~ .menu {
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+/* Hamburger menbu text */
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #333;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu li {
+  border-top: 1px solid rgb(75, 75, 75);
+  padding: 15px 0;
+  margin: 0 54px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu-btn:checked ~ .menu a,
+.menu-btn:checked ~ .menu li {
+  opacity: 1;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.menu-icon {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 24px 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.navicon {
+  background: #333;
+  display: block;
+  height: 3px;
+  width: 26px;
+  position: relative;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+.navicon:before,
+.navicon:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #333;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+.navicon:before {
+  top: 9px;
+}
+
+.navicon:after {
+  bottom: 9px;
+}
+
+/* Hamburger Menu Animation Start */
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+  top: 0;
+}
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  bottom: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: rgba(0, 0, 0, 0);
+  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+/* Hamburger Menu Animation End */
+
+/* Navbar Container */
+.navtext-container {
+  width: 100%;
+  height: 52px;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar Text */
+.navtext {
+  position: absolute;
+  top: 15px;
+  left: 30%;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 4px;
+  font-size: 20px;
+  
+}
+
+
+
+/***追従するトップへ戻るボタン***/
+#page-top {
+	margin-right: 200px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    background: #fff;
+    color: #737373;
+    padding: 20px;
+    border: solid 1px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px -6px rgba(0,0,0,.5), 0 3px 10px -4px rgba(0,0,0,.2);
+}
+/***トップへ戻るボタンここまで***/
+
+/*KP情報*/
+.kp {
+	margin: 2em auto;
+	padding:1em;/*内側余白*/
+	background-color:#f4f4f4;/*背景色*/
+}
+
+.kp:after{
+	position: absolute;
+	content: '';
+	right: 0px;
+	top: 0px;
+	border-width: 0 15px 15px 0;
+	border-style: solid;
+	border-color: #ccc #fff  #ccc;
+	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/*手記などの情報*/
+.information {
+	border: solid 1px #666;
+	padding: 0;
+	}
+.information_txt {
+	border: solid 10px #f4f4f4;
+	padding: 1em;
+	margin: 0;
+	}
+
+/*技能*/
+.skill {
+  border-right: 5px solid #666;
+  border-left: 5px solid #666;
+  background-color: #f4f4f4;
+  padding: 1em;
+}
+
+@media screen and (max-width:480px) {
+
+header, .contents, footer{
+  width: 95%;
+}
+
+.menu {
+  width: 95%;
+}
+
+/***追従するトップへ戻るボタン***/
+#page-top {
+	margin-right: 10px;
+}
+/***トップへ戻るボタンここまで***/
+
+}
